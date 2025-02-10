@@ -1,6 +1,6 @@
 # 📱Calculadora de Gorjeta
 
-Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divisão de contas em restaurantes de forma simples. O usuário pode escolher se deseja ou não adicionar gorjeta e o valor da porcentagem é definido dinamicamente, dependendo da escolha. O app calcula automaticamente os valores e exibe um resumo detalhado em outra tela. Há ainda a opção de recalcular ou limpar os campos para refazer as contas.
+Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divisão de contas em restaurantes de forma simples. O usuário pode escolher se deseja ou não adicionar gorjeta e o valor da porcentagem é definido dinamicamente dependendo da escolha. O app calcula automaticamente os valores e exibe um resumo detalhado em outra tela. Há ainda a opção de recalcular ou limpar os campos para refazer as contas.
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
