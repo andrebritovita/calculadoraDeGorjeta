@@ -1,6 +1,6 @@
-## Calculadora de Gorjeta
+# 📱Calculadora de Gorjeta
 
-Este é um aplicativo Android Nativo desenvolvido em Kotlin que permite ao usuário calcular a divisão da conta em um restaurante, com ou sem gorjeta, de forma dinâmica. O usuário pode selecionar se deseja adicionar uma gorjeta e definir a porcentagem. O resultado detalhado é exibido em uma segunda tela, e há a opção de recalcular ou limpar os campos.
+Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divisão de contas em restaurantes de forma simples. O usuário pode escolher se deseja ou não adicionar gorjeta e o valor da porcentagem é definido dinamicamente, dependendo da escolha. O app calcula automaticamente os valores e exibe um resumo detalhado em outra tela. Há ainda a opção de recalcular ou limpar os campos para refazer as contas.
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
@@ -21,17 +21,16 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que permite ao usuá
   - Radiogroup/ Radiobutton
   - Button
  
-  ## Métodos e Recursos
-- Métodos Utilizados:
+## Métodos e Recursos:
   - ViewBinding
   - Intent/ Bundle
   - Snackbar
   - Estruturas condicionais "if/else if"
   - isEmpty/ setError
 
-  ## Lógica e Processamento
+## Lógica e Processamento
   - Passagem de dados entre Activitys usando Intent.extras
-  - Modularização de métodos para verificação de campos e realização de cálculos
+  - Modularização do código para validação de campos e realização de cálculos
   - Conversão de Strings para números (toFloat(), toInt())
   - Esconder o teclado ao clicar nos botões (InputMethodManager.hideSoftInputFromWindow())
   - Exibir ou ocultar campos dinamicamente (View.VISIBLE, View.GONE)
