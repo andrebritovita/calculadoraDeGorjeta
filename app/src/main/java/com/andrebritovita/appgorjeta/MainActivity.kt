@@ -34,15 +34,18 @@ class MainActivity : AppCompatActivity() {
             calcular()
         }
         binding.btnClean.setOnClickListener {
-            binding.apply {
-                tieTotal.text?.clear()
-                tieNumPeople.text?.clear()
-                rgTipOptions.clearCheck()
-                tieTipValue.text?.clear()
-                tilTipValue.visibility = View.GONE
-            }
-            percentage = 0.0f
+            clean()
         }
+    }
+    private fun clean (){
+        binding.apply {
+            tieTotal.text?.clear()
+            tieNumPeople.text?.clear()
+            rgTipOptions.clearCheck()
+            tieTipValue.text?.clear()
+            tilTipValue.visibility = View.GONE
+        }
+        percentage = 0.0f
     }
     private fun calcular() {
         val totalStr: String = binding.tieTotal.text.toString()
@@ -58,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             val tips = totalParcial * percentage / 100
             val totalWithTips = totalParcial + tips
             val totalValue = totalWithTips * nPeopleInt
-
+            clean()
             startActivity(Intent(this, ResultActivity::class.java).apply {
                 putExtra(KEY_RESULTS, Resumo(tips, totalValue, nPeopleInt, totalParcial, totalWithTips, percentage))
             })
