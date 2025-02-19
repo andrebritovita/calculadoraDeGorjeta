@@ -24,12 +24,17 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
 ## Métodos e Recursos:
   - ViewBinding
   - Intent/ Bundle
+  - Parcelable
   - Snackbar
   - Estruturas condicionais "if/else if"
   - isEmpty/ setError
+  - Uso do operador seguro "?.let"
+  - Uso de funções lambda
 
 ## Lógica e Processamento
-  - Passagem de dados entre Activitys usando Intent.extras
+  - Passagem de dados entre Activitys usando Parcelable
+  - Uso do operador "?.let" para verificar valores nulos antes de acessá-los
+  - Uso do "with(binding)" para otimizar atribuições de "Views"
   - Modularização do código para validação de campos e realização de cálculos
   - Conversão de Strings para números (toFloat(), toInt())
   - Esconder o teclado ao clicar nos botões (InputMethodManager.hideSoftInputFromWindow())
