@@ -4,16 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.andrebritovita.appgorjeta.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
-import java.math.RoundingMode
 
 const val KEY_RESULTS = "RESULTSACTIVITY_KEY_RESULTS"
 class MainActivity : AppCompatActivity() {
@@ -40,11 +34,13 @@ class MainActivity : AppCompatActivity() {
             calcular()
         }
         binding.btnClean.setOnClickListener {
-            binding.tieTotal.text?.clear()
-            binding.tieNumPeople.text?.clear()
-            binding.rgTipOptions.clearCheck()
-            binding.tieTipValue.text?.clear()
-            binding.tilTipValue.visibility = View.GONE
+            binding.apply {
+                tieTotal.text?.clear()
+                tieNumPeople.text?.clear()
+                rgTipOptions.clearCheck()
+                tieTipValue.text?.clear()
+                tilTipValue.visibility = View.GONE
+            }
             percentage = 0.0f
         }
     }
@@ -56,61 +52,42 @@ class MainActivity : AppCompatActivity() {
             if (binding.rbTipCustom.isChecked){
                 percentage = binding.tieTipValue.text.toString().toFloat()
             }
-            val totalF = totalStr.toFloat()
-            val nPeopleInt = nPeopleStr.toInt()
+            val totalF = totalStr.toFloatOrNull() ?: return
+            val nPeopleInt = nPeopleStr.toIntOrNull() ?: return
             val totalParcial = totalF / nPeopleInt
             val tips = totalParcial * percentage / 100
             val totalWithTips = totalParcial + tips
             val totalValue = totalWithTips * nPeopleInt
 
-            val intent = Intent (this, ResultActivity::class.java)
-            val resumo = Resumo(
-                tips,
-                totalValue,
-                nPeopleInt,
-                totalParcial,
-                totalWithTips,
-                percentage
-            )
-            intent.putExtra(KEY_RESULTS, resumo)
-            startActivity(intent)
+            startActivity(Intent(this, ResultActivity::class.java).apply {
+                putExtra(KEY_RESULTS, Resumo(tips, totalValue, nPeopleInt, totalParcial, totalWithTips, percentage))
+            })
         }
     }
+    private fun showErrorMessage(view: TextInputEditText, message: String): Boolean {
+        view.error = message
+        view.requestFocus()
+        view.postDelayed({ view.clearFocus() }, 1000)
+        return false
+    }
     private fun verificarCampos(vTotal: String, qntPeople: String): Boolean {
-        if (vTotal.isEmpty()) {
-            binding.tieTotal.error = "Digite o valor total da conta."
-            binding.tieTotal.requestFocus()
-            binding.tieTotal.postDelayed({
-                binding.tieTotal.clearFocus()
-            }, 1000)
+        if (vTotal.isEmpty()) return showErrorMessage(binding.tieTotal, "Digite o valor total da conta.")
+        if (qntPeople.isEmpty()) return showErrorMessage(binding.tieNumPeople, "Digite o número de pessoas!")
+
+        if (!binding.rbTipCustom.isChecked && !binding.rbNoTip.isChecked) {
+            showSnackbar("Deseja adicionar gorjeta?")
             return false
-        } else if (qntPeople.isEmpty()) {
-            binding.tieNumPeople.error = "Digite o número de pessoas!"
-            binding.tieNumPeople.requestFocus()
-            binding.tieNumPeople.postDelayed({
-                binding.tieNumPeople.clearFocus()
-            }, 1000)
-            return false
-        } else if (!binding.rbTipCustom.isChecked && !binding.rbNoTip.isChecked) {
-            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-            Snackbar.make(
-                binding.btnClean,
-                "Deseja adicionar gorjeta?",
-                Snackbar.LENGTH_LONG
-            ).show()
-            return false
-        } else if (binding.rbTipCustom.isChecked && binding.tieTipValue.text.toString().isEmpty()) {
-            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-            Snackbar.make(
-                binding.btnClean,
-                "Escolha a porcentagem de gorjeta!",
-                Snackbar.LENGTH_LONG
-            ).show()
+        }
+        if (binding.rbTipCustom.isChecked && binding.tieTipValue.text.toString().isEmpty()) {
+            showSnackbar("Escolha a porcentagem de gorjeta!")
             return false
         }
         return true
+    }
+    private fun showSnackbar(message: String) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+        Snackbar.make(binding.btnClean, message, Snackbar.LENGTH_LONG).show()
     }
 }
 

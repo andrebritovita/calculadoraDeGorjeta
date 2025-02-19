@@ -13,6 +13,7 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ResultActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         intent.extras?.let { bundle ->
             val resultado: Resumo? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 bundle.getParcelable(KEY_RESULTS, Resumo::class.java)
