@@ -15,12 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import java.math.RoundingMode
 
-const val KEY_TIPS = "RESULTSACTIVITY_KEY_TIPS"
-const val KEY_TOTAL = "RESULTSACTIVITY_KEY_TOTAL"
-const val KEY_NUM_PEOPLE = "RESULTSACTIVITY_KEY_NUM_PEOPLE"
-const val KEY_NO_TIPS = "RESULTSACTIVITY_KEY_NO_TIPS"
-const val KEY_WITH_TIPS = "RESULTSACTIVITY_KEY_WITH_TIPS"
-const val KEY_PERCT_TIPS = "RESULTSACTIVITY_KEY_PERCT_TIPS"
+const val KEY_RESULTS = "RESULTSACTIVITY_KEY_RESULTS"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     var percentage: Float = 0.0f
@@ -67,13 +62,17 @@ class MainActivity : AppCompatActivity() {
             val tips = totalParcial * percentage / 100
             val totalWithTips = totalParcial + tips
             val totalValue = totalWithTips * nPeopleInt
+
             val intent = Intent (this, ResultActivity::class.java)
-            intent.putExtra(KEY_TIPS, tips)
-            intent.putExtra(KEY_TOTAL, totalValue)
-            intent.putExtra(KEY_NUM_PEOPLE, nPeopleInt)
-            intent.putExtra(KEY_NO_TIPS, totalParcial)
-            intent.putExtra(KEY_WITH_TIPS, totalWithTips)
-            intent.putExtra(KEY_PERCT_TIPS, percentage)
+            val resumo = Resumo(
+                tips,
+                totalValue,
+                nPeopleInt,
+                totalParcial,
+                totalWithTips,
+                percentage
+            )
+            intent.putExtra(KEY_RESULTS, resumo)
             startActivity(intent)
         }
     }

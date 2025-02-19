@@ -1,5 +1,6 @@
 package com.andrebritovita.appgorjeta
 
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.andrebritovita.appgorjeta.databinding.ResultActivityBinding
@@ -12,23 +13,24 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ResultActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val bundle = intent.extras
-        if (bundle != null){
-            val gorjeta = bundle.getFloat(KEY_TIPS, 0.0f)
-            val totalTodos = bundle.getFloat(KEY_TOTAL, 0.0f)
-            val numPessoas = bundle.getInt(KEY_NUM_PEOPLE, 0)
-            val totalSemGorjeta = bundle.getFloat(KEY_NO_TIPS, 0.0f)
-            val totalComGorjeta = bundle.getFloat(KEY_WITH_TIPS, 0.0f)
-            val porcGorjeta = bundle.getFloat(KEY_PERCT_TIPS, 0.0f)
-            binding.tvResult.text = String.format(Locale.US, "%.2f REAIS", totalComGorjeta)
-            binding.tvParcial.text = String.format(Locale.US, "Valor sem gorjeta: R$ %.2f reais", totalSemGorjeta)
-            binding.tvGorjeta.text = String.format(Locale.US, "Gorjeta: R$ %.2f reais", gorjeta)
-            binding.tvPorcentGorjeta.text = "Porcentagem de gorjeta: $porcGorjeta %"
-            binding.tvNumPessoas.text = "Número de pessoas: $numPessoas"
-            binding.tvTotalTodos.text = "Valor total da mesa: R$ $totalTodos reais"
+        intent.extras?.let { bundle ->
+            val resultado: Resumo? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                bundle.getParcelable(KEY_RESULTS, Resumo::class.java)
+            } else {
+                bundle.getParcelable(KEY_RESULTS)
+            }
+            resultado?.let (::exibirResultados)
         }
-        binding.btnNewCalc.setOnClickListener {
-            finish()
+        binding.btnNewCalc.setOnClickListener { finish() }
+    }
+    private fun exibirResultados(resultado: Resumo) {
+        with(binding) {
+            tvResult.text = String.format(Locale.US, "%.2f REAIS", resultado.totalWithTipsPc)
+            tvParcial.text = String.format(Locale.US, "Valor sem gorjeta: R$ %.2f reais", resultado.totalParcialPc)
+            tvGorjeta.text = String.format(Locale.US, "Gorjeta: R$ %.2f reais", resultado.tipsPc)
+            tvPorcentGorjeta.text = "Porcentagem de gorjeta: ${resultado.percentagePc} %"
+            tvNumPessoas.text = "Número de pessoas: ${resultado.numPeoplePc}"
+            tvTotalTodos.text = "Valor total da mesa: R$ ${resultado.totalPc} reais"
         }
     }
 }
