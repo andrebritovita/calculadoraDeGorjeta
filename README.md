@@ -1,15 +1,17 @@
 # 📱Calculadora de Gorjeta
 
-Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divisão de contas em restaurantes de forma simples. O usuário pode escolher se deseja ou não adicionar gorjeta e o valor da porcentagem é definido dinamicamente dependendo da escolha. O app calcula automaticamente os valores e exibe um resumo detalhado em outra tela. Há ainda a opção de recalcular ou limpar os campos para refazer as contas.
+Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divisão de contas em restaurantes de forma simples e intuitiva. O usuário pode escolher se deseja ou não adicionar gorjeta, com a porcentagem definida dinamicamente. O app calcula automaticamente os valores e exibe um resumo detalhado em outra tela. Além disso, o usuário pode recalcular ou limpar os campos para refazer as contas.
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="https://github.com/user-attachments/assets/1725b9ec-e1b8-4176-8ac0-2ac975f83d6e" width=200/> <img src="https://github.com/user-attachments/assets/90bd0061-c7a2-49fd-9180-2d1511d9280b" width=200/> <img src="https://github.com/user-attachments/assets/32ca435d-b01d-46e3-bfd5-5adbc79585c8" width=200/> <img src="https://github.com/user-attachments/assets/b9a3fe04-8c67-4b41-9d03-fd3bf8d3f274" width=200/>
+<img src="https://github.com/user-attachments/assets/de405d89-14a7-43e5-b00d-ccdc68d0dabd" width=200/> <img src="https://github.com/user-attachments/assets/06fc0fe3-544e-41a9-be8c-f51b98b14249" width=200/> <img src="https://github.com/user-attachments/assets/e9dc9328-6402-4820-bd56-7ca9a3134bcc" width=200/> <img src="https://github.com/user-attachments/assets/0aefb116-a846-431b-8c65-45c2e6c8d461" width=200/>
+
 
 ## Tecnologias
 - Activity
 - Intent
 - Bundle
+- 
 - screenOrientation
 - ViewBinding
 - Viewgroups:
