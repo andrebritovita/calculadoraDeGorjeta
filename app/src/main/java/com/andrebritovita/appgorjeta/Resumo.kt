@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Resumo(
     val tipsPc: Float,
+    val totalNoTips: Float,
     val totalPc: Float,
     val numPeoplePc: Int,
     val totalParcialPc: Float,

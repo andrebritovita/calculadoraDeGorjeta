@@ -13,6 +13,10 @@ const val KEY_RESULTS = "RESULTSACTIVITY_KEY_RESULTS"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     var percentage: Float = 0.0f
+    override fun onResume() {
+        super.onResume()
+        clean()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -21,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         binding.rbTipCustom.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 binding.tilTipValue.visibility = if (isChecked) View.VISIBLE else View.GONE
+                binding.tvHintTipValue.visibility = if (isChecked) View.VISIBLE else View.GONE
             }
         }
         binding.rbNoTip.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked){
                 binding.tilTipValue.visibility = View.GONE
+                binding.tvHintTipValue.visibility = View.GONE
                 binding.tieTipValue.text?.clear()
                 percentage = 0.0f
             }
@@ -44,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             rgTipOptions.clearCheck()
             tieTipValue.text?.clear()
             tilTipValue.visibility = View.GONE
+            binding.tvHintTipValue.visibility = View.GONE
         }
         percentage = 0.0f
     }
@@ -61,9 +68,8 @@ class MainActivity : AppCompatActivity() {
             val tips = totalParcial * percentage / 100
             val totalWithTips = totalParcial + tips
             val totalValue = totalWithTips * nPeopleInt
-            clean()
             startActivity(Intent(this, ResultActivity::class.java).apply {
-                putExtra(KEY_RESULTS, Resumo(tips, totalValue, nPeopleInt, totalParcial, totalWithTips, percentage))
+                putExtra(KEY_RESULTS, Resumo(tips, totalF,totalValue, nPeopleInt, totalParcial, totalWithTips, percentage))
             })
         }
     }

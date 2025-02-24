@@ -11,8 +11,9 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans"
         android:text="Resumo"
         android:textAlignment="center"
@@ -28,16 +29,18 @@
         android:id="@+id/tv_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans"
-        android:text="Veja abaixo o resumo da sua conta"
+        android:text="Veja abaixo os detalhes da sua conta"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/tv_result"
@@ -55,7 +58,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="_______________________________________________"
+        android:text="______________________________________________________"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,59 +69,48 @@
         android:id="@+id/tv_Parcial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_total_todos" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_Total_Todos_No_Tips"
+        app:layout_constraintTop_toTopOf="@+id/tv_Parcial_left" />
 
     <TextView
         android:id="@+id/tv_gorjeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_Parcial" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_Parcial"
+        app:layout_constraintTop_toTopOf="@+id/tv_gorjeta_left" />
 
     <TextView
         android:id="@+id/tv_porcent_gorjeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gorjeta" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_gorjeta"
+        app:layout_constraintTop_toTopOf="@+id/tv_porcent_gorjeta_left" />
 
     <TextView
         android:id="@+id/tv_num_pessoas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_porcent_gorjeta" />
+        app:layout_constraintEnd_toEndOf="@+id/tv_porcent_gorjeta"
+        app:layout_constraintTop_toTopOf="@+id/tv_num_pessoas_lefy" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="_______________________________________________"
+        android:text="______________________________________________________"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <Button
         android:id="@+id/btn_new_calc"
@@ -137,13 +130,11 @@
         android:id="@+id/tv_total_todos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/tv_total_todos_left" />
 
     <TextView
         android:id="@+id/textView8"
@@ -157,5 +148,75 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/tv_Total_Todos_No_Tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_total_todos"
+        app:layout_constraintTop_toTopOf="@+id/tv_Total_Todos_No_Tips_left" />
+
+    <TextView
+        android:id="@+id/tv_total_todos_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Valor total com gorjeta: "
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+
+    <TextView
+        android:id="@+id/tv_Total_Todos_No_Tips_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Valor total sem gorjeta:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_total_todos_left"
+        app:layout_constraintTop_toBottomOf="@+id/tv_total_todos_left" />
+
+    <TextView
+        android:id="@+id/tv_Parcial_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Valor individual (sem gorjeta):"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_Total_Todos_No_Tips_left"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Total_Todos_No_Tips_left" />
+
+    <TextView
+        android:id="@+id/tv_gorjeta_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Valor da gorjeta:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_Parcial_left"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Parcial_left" />
+
+    <TextView
+        android:id="@+id/tv_porcent_gorjeta_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Porcentagem de gorjeta:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_gorjeta_left"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gorjeta_left" />
+
+    <TextView
+        android:id="@+id/tv_num_pessoas_lefy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Número de pessoas:"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_porcent_gorjeta_left"
+        app:layout_constraintTop_toBottomOf="@+id/tv_porcent_gorjeta_left" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

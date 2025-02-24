@@ -22,16 +22,19 @@ class ResultActivity : AppCompatActivity() {
             }
             resultado?.let (::exibirResultados)
         }
-        binding.btnNewCalc.setOnClickListener { finish() }
+
+        binding.btnNewCalc.setOnClickListener { finish()
+        }
     }
     private fun exibirResultados(resultado: Resumo) {
         with(binding) {
             tvResult.text = String.format(Locale.US, "%.2f REAIS", resultado.totalWithTipsPc)
-            tvParcial.text = String.format(Locale.US, "Valor sem gorjeta: R$ %.2f reais", resultado.totalParcialPc)
-            tvGorjeta.text = String.format(Locale.US, "Gorjeta: R$ %.2f reais", resultado.tipsPc)
-            tvPorcentGorjeta.text = "Porcentagem de gorjeta: ${resultado.percentagePc} %"
-            tvNumPessoas.text = "Número de pessoas: ${resultado.numPeoplePc}"
-            tvTotalTodos.text = "Valor total da mesa: R$ ${resultado.totalPc} reais"
+            tvParcial.text = String.format(Locale.US, "R$ %.2f reais", resultado.totalParcialPc)
+            tvGorjeta.text = String.format(Locale.US, "R$ %.2f reais", resultado.tipsPc)
+            tvTotalTodos.text = String.format(Locale.US, "R$ %.2f reais", resultado.totalPc)
+            tvPorcentGorjeta.text = "${resultado.percentagePc} %"
+            tvNumPessoas.text = "${resultado.numPeoplePc}"
+            tvTotalTodosNoTips.text = "R$ ${resultado.totalNoTips} reais"
         }
     }
 }
