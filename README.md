@@ -11,9 +11,12 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
 - Activity
 - Intent
 - Bundle
-- 
+- Parcelable
 - screenOrientation
 - ViewBinding
+- Snackbar
+- 
+## Layouts e Componentes de UI
 - Viewgroups:
   - ConstraintLayout
   - LinearLayout
@@ -31,17 +34,20 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
   - Estruturas condicionais "if/else if"
   - isEmpty/ setError
   - Uso do operador seguro "?.let"
-  - Uso de funções lambda
+  - Uso de expressões lambda
 
 ## Lógica e Processamento
-  - Passagem de dados entre Activitys usando Parcelable
-  - Uso do operador "?.let" para verificar valores nulos antes de acessá-los
-  - Uso do "with(binding)" para otimizar atribuições de "Views"
-  - Modularização do código para validação de campos e realização de cálculos
-  - Conversão de Strings para números (toFloat(), toInt())
-  - Esconder o teclado ao clicar nos botões (InputMethodManager.hideSoftInputFromWindow())
-  - Exibir ou ocultar campos dinamicamente (View.VISIBLE, View.GONE)
-  - Resetar o formulário após click no botão (clearCheck(), text?.clear())
+  - Validação de campos de entrada;
+  - Uso do Snackbar para feedback ao usuário;
+  - Passagem de objetos entre Activitys usando Parcelable;
+  - Uso do onResume() para limpeza de tela;
+  - Uso do operador "?.let" para verificar valores nulos antes de acessá-los;
+  - Uso do "with(binding)" para otimizar atribuições de "Views";
+  - Modularização do código para validação de campos e realização de cálculos;
+  - Conversão de valores para 2 casas decimais;
+  - Esconder o teclado ao clicar nos botões (InputMethodManager.hideSoftInputFromWindow());
+  - Exibir ou ocultar campos dinamicamente (View.VISIBLE, View.GONE);
+  - Resetar o formulário após click no botão (clearCheck(), text?.clear());
  
 ## License
 ```
