@@ -4,7 +4,7 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="https://github.com/user-attachments/assets/de405d89-14a7-43e5-b00d-ccdc68d0dabd" width=200/> <img src="https://github.com/user-attachments/assets/06fc0fe3-544e-41a9-be8c-f51b98b14249" width=200/> <img src="https://github.com/user-attachments/assets/e9dc9328-6402-4820-bd56-7ca9a3134bcc" width=200/> <img src="https://github.com/user-attachments/assets/0aefb116-a846-431b-8c65-45c2e6c8d461" width=200/>
+<img src="https://github.com/user-attachments/assets/5006d810-3702-4d62-a5a0-25a613f79bf9" width=200/> <img src="https://github.com/user-attachments/assets/bcba4e75-f155-488f-8408-3083dff44621" width=200/> <img src="https://github.com/user-attachments/assets/1cd082ee-7ec6-4f82-9c3e-5bcda00ee276" width=200/> <img src="https://github.com/user-attachments/assets/4b822e07-2a72-4fb5-bd07-bfb5c86bbe50" width=200/> <img src="https://github.com/user-attachments/assets/8210481c-3686-4a47-846e-e6897f036d5a" width=200/> <img src="https://github.com/user-attachments/assets/7205dc95-c8ed-4645-b0f1-76845ba2f012" width=200/>
 
 
 ## Tecnologias
@@ -15,7 +15,7 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
 - screenOrientation
 - ViewBinding
 - Snackbar
-- 
+  
 ## Layouts e Componentes de UI
 - Viewgroups:
   - ConstraintLayout
@@ -31,14 +31,14 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
   - Intent/ Bundle
   - Parcelable
   - Snackbar
-  - Estruturas condicionais "if/else if"
+  - Estruturas condicionais "if/else"
   - isEmpty/ setError
   - Uso do operador seguro "?.let"
   - Uso de expressões lambda
 
 ## Lógica e Processamento
   - Validação de campos de entrada;
-  - Uso do Snackbar para feedback ao usuário;
+  - Uso do Snackbar e mensagens de erro para feedback ao usuário;
   - Passagem de objetos entre Activitys usando Parcelable;
   - Uso do onResume() para limpeza de tela;
   - Uso do operador "?.let" para verificar valores nulos antes de acessá-los;
@@ -48,6 +48,7 @@ Este é um aplicativo Android Nativo desenvolvido em Kotlin que auxilia na divis
   - Esconder o teclado ao clicar nos botões (InputMethodManager.hideSoftInputFromWindow());
   - Exibir ou ocultar campos dinamicamente (View.VISIBLE, View.GONE);
   - Resetar o formulário após click no botão (clearCheck(), text?.clear());
+  - Suporte a múltiplos idiomais através da extração das Strings para os arquivos de recursos. 
  
 ## License
 ```
