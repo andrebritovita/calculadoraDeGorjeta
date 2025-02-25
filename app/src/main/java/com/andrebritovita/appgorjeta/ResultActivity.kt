@@ -28,13 +28,13 @@ class ResultActivity : AppCompatActivity() {
     }
     private fun exibirResultados(resultado: Resumo) {
         with(binding) {
-            tvResult.text = String.format(Locale.US, "%.2f REAIS", resultado.totalWithTipsPc)
-            tvParcial.text = String.format(Locale.US, "R$ %.2f reais", resultado.totalParcialPc)
-            tvGorjeta.text = String.format(Locale.US, "R$ %.2f reais", resultado.tipsPc)
-            tvTotalTodos.text = String.format(Locale.US, "R$ %.2f reais", resultado.totalPc)
+            tvResult.text = String.format(Locale.US, "%.2f", resultado.totalWithTipsPc)
+            tvParcial.text = String.format(Locale.US, "%.2f", resultado.totalParcialPc)
+            tvGorjeta.text = String.format(Locale.US, "%.2f", resultado.tipsPc)
+            tvTotalTodos.text = String.format(Locale.US, "%.2f", resultado.totalPc)
             tvPorcentGorjeta.text = "${resultado.percentagePc} %"
             tvNumPessoas.text = "${resultado.numPeoplePc}"
-            tvTotalTodosNoTips.text = "R$ ${resultado.totalNoTips} reais"
+            tvTotalTodosNoTips.text = "${resultado.totalNoTips}"
         }
     }
 }

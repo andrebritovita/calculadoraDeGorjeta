@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calcolatrice della Mancia</string>
+    <string name="total_without_tips">Importo totale senza mancia (€):</string>
+    <string name="summary_bill">Di seguito i dettagli del tuo conto</string>
+    <string name="summary">Riepilogo</string>
+    <string name="refresh">Calcola di nuovo</string>
+    <string name="individual_value">Importo per persona: €</string>
+    <string name="total_with_tips">Importo totale con mancia (€):</string>
+    <string name="individual_amount_without_tip">Importo individuale senza mancia (€):</string>
+    <string name="tip_amount">Importo della mancia (€):</string>
+    <string name="tip_percentage">Percentuale della mancia:</string>
+    <string name="number_of_people">Numero di persone:</string>
+    <string name="fill_fields">Compila i campi sottostanti per calcolare il conto</string>
+    <string name="enter_bill_amount">Inserisci l\'importo del conto:</string>
+    <string name="ex_amount">Es: € 250,00</string>
+    <string name="num_of_people">Numero di persone:</string>
+    <string name="ex_num_people">Es: 7</string>
+    <string name="add_tip">Aggiungi mancia</string>
+    <string name="no_tip">Senza mancia</string>
+    <string name="add_percentage_tip">Percentuale della mancia:</string>
+    <string name="error_empty_bill">Inserisci l\'importo totale del conto!</string>
+    <string name="error_empty_people">Inserisci il numero di persone!</string>
+    <string name="snackbar_add_tip">Vuoi aggiungere una mancia?</string>
+    <string name="snackbar_choose_percentage">Scegli la percentuale della mancia!</string>
+    <string name="clean">Pulisci</string>
+    <string name="calculate">Calcola</string>
+</resources>

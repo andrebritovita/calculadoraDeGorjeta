@@ -80,15 +80,14 @@ class MainActivity : AppCompatActivity() {
         return false
     }
     private fun verificarCampos(vTotal: String, qntPeople: String): Boolean {
-        if (vTotal.isEmpty()) return showErrorMessage(binding.tieTotal, "Digite o valor total da conta.")
-        if (qntPeople.isEmpty()) return showErrorMessage(binding.tieNumPeople, "Digite o número de pessoas!")
-
+        if (vTotal.isEmpty()) return showErrorMessage(binding.tieTotal, getString(R.string.error_empty_bill))
+        if (qntPeople.isEmpty()) return showErrorMessage(binding.tieNumPeople, getString(R.string.error_empty_people))
         if (!binding.rbTipCustom.isChecked && !binding.rbNoTip.isChecked) {
-            showSnackbar("Deseja adicionar gorjeta?")
+            showSnackbar(getString(R.string.snackbar_add_tip))
             return false
         }
         if (binding.rbTipCustom.isChecked && binding.tieTipValue.text.toString().isEmpty()) {
-            showSnackbar("Escolha a porcentagem de gorjeta!")
+            showSnackbar(getString(R.string.snackbar_choose_percentage))
             return false
         }
         return true

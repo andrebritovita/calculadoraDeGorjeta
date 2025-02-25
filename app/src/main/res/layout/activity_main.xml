@@ -13,11 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:paddingStart="16dp"
-        android:text="Digite o valor da conta:"
+        android:text="@string/enter_bill_amount"
         android:textSize="14dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 
     <TextView
         android:id="@+id/tv_hint_num_of_people"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:paddingStart="16dp"
-        android:text="Número de pessoas:"
+        android:text="@string/num_of_people"
         android:textSize="14dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/til_total"
@@ -39,11 +40,34 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
-        android:text="Calculadora de Gorjeta"
+        android:text="@string/app_name"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="______________________________________________________"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="______________________________________________________"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_subtitle"
+        app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/tv_subtitle"
@@ -55,13 +79,14 @@
         android:layout_marginEnd="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:text="Preencha os campos abaixo para realizar o cálculo da sua conta"
+        android:text="@string/fill_fields"
         android:textAlignment="viewStart"
-        android:textSize="16dp"
+        android:textColor="@color/colorPrimary_500"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_total"
@@ -78,7 +103,7 @@
             android:id="@+id/tie_total"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: R$ 250,00"
+            android:hint="@string/ex_amount"
             android:inputType="numberDecimal"
             android:maxLength="7"
             android:paddingStart="16dp"
@@ -89,10 +114,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_number_of_people"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="@+id/til_total"
         app:layout_constraintStart_toStartOf="@+id/til_total"
@@ -102,7 +127,7 @@
             android:id="@+id/tie_num_people"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ex: 7"
+            android:hint="@string/ex_num_people"
             android:inputType="number"
             android:maxLength="2"
             android:paddingStart="16dp"
@@ -116,7 +141,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:text="Limpar"
+        android:text="@string/clean"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_guideline"
         app:layout_constraintStart_toStartOf="@+id/til_number_of_people" />
@@ -127,7 +153,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="Calcular"
+        android:text="@string/calculate"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/til_number_of_people"
         app:layout_constraintStart_toStartOf="@+id/btn_guideline" />
@@ -156,21 +183,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingStart="12dp">
+            android:paddingStart="10dp">
 
             <RadioButton
                 android:id="@+id/rb_tip_custom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingEnd="16dp"
-                android:text="Adicionar gorjeta"
+                android:text="@string/add_tip"
                 android:textSize="16dp" />
 
             <RadioButton
                 android:id="@+id/rb_no_tip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sem gorjeta"
+                android:text="@string/no_tip"
                 android:textSize="16dp" />
 
         </RadioGroup>
@@ -182,19 +209,19 @@
             android:paddingStart="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="0dp"
-            android:text="Porcentagem da gorjeta:"
+            android:text="@string/add_percentage_tip"
             android:textSize="14dp"
             android:textStyle="bold"
             android:visibility="gone" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_tip_value"
-            app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp"
-            app:hintEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone">
+            android:visibility="gone"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tie_tip_Value"

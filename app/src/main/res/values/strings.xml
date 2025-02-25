@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">AppGorjeta</string>
+    <string name="app_name">Tips Calculator</string>
+    <string name="total_without_tips">Total values without tip ($):</string>
+    <string name="summary_bill">See bellow the summary of your bill</string>
+    <string name="summary">Summary</string>
+    <string name="refresh">Refresh</string>
+    <string name="individual_value">Amount per person $: </string>
+    <string name="total_with_tips">Total value with tip ($):</string>
+    <string name="individual_amount_without_tip">Individual amount without tip ($):</string>
+    <string name="tip_amount">Tip amount ($):</string>
+    <string name="tip_percentage">Tip percentage:</string>
+    <string name="number_of_people">Number of people:</string>
+    <string name="fill_fields">Fill in the fields below to calculate your bill</string>
+    <string name="enter_bill_amount">Enter the bill amount:</string>
+    <string name="ex_amount">Ex: $250.00</string>
+    <string name="num_of_people">Number of people:</string>
+    <string name="ex_num_people">Ex: 7</string>
+    <string name="add_tip">Add tip</string>
+    <string name="no_tip">No tip</string>
+    <string name="add_percentage_tip">Tip percentage:</string>
+    <string name="error_empty_bill">Enter the total bill amount!</string>
+    <string name="error_empty_people">Enter the number of people!</string>
+    <string name="snackbar_add_tip">Do you want to add a tip?</string>
+    <string name="snackbar_choose_percentage">Choose the tip percentage!</string>
+    <string name="clean">Clean</string>
+    <string name="calculate">Calculate</string>
 </resources>

@@ -15,7 +15,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans"
-        android:text="Resumo"
+        android:text="@string/summary"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32dp"
@@ -33,7 +33,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/open_sans"
-        android:text="Veja abaixo os detalhes da sua conta"
+        android:text="@string/summary_bill"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16dp"
@@ -99,7 +99,7 @@
         android:text="TextView"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_porcent_gorjeta"
-        app:layout_constraintTop_toTopOf="@+id/tv_num_pessoas_lefy" />
+        app:layout_constraintTop_toTopOf="@+id/tv_num_pessoas_left" />
 
     <TextView
         android:id="@+id/textView6"
@@ -119,7 +119,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Calcular novamente"
+        android:text="@string/refresh"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Valor por pessoa: R$"
+        android:text="@string/individual_value"
         android:textColor="@color/colorPrimary_500"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:text="Valor total com gorjeta: "
+        android:text="@string/total_with_tips"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
@@ -173,8 +173,8 @@
         android:id="@+id/tv_Total_Todos_No_Tips_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Valor total sem gorjeta:"
+        android:layout_marginTop="24dp"
+        android:text="@string/total_without_tips"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_total_todos_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_total_todos_left" />
@@ -183,8 +183,8 @@
         android:id="@+id/tv_Parcial_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Valor individual (sem gorjeta):"
+        android:layout_marginTop="24dp"
+        android:text="@string/individual_amount_without_tip"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_Total_Todos_No_Tips_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_Total_Todos_No_Tips_left" />
@@ -193,8 +193,8 @@
         android:id="@+id/tv_gorjeta_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Valor da gorjeta:"
+        android:layout_marginTop="24dp"
+        android:text="@string/tip_amount"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_Parcial_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_Parcial_left" />
@@ -203,18 +203,18 @@
         android:id="@+id/tv_porcent_gorjeta_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Porcentagem de gorjeta:"
+        android:layout_marginTop="24dp"
+        android:text="@string/tip_percentage"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_gorjeta_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_gorjeta_left" />
 
     <TextView
-        android:id="@+id/tv_num_pessoas_lefy"
+        android:id="@+id/tv_num_pessoas_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Número de pessoas:"
+        android:layout_marginTop="24dp"
+        android:text="@string/number_of_people"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/tv_porcent_gorjeta_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_porcent_gorjeta_left" />

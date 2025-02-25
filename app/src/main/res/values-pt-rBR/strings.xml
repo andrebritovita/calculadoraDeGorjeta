@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora de Gorjeta</string>
+    <string name="total_without_tips">Valor total sem gorjeta (R$):</string>
+    <string name="summary_bill">Veja abaixo os detalhes da sua conta</string>
+    <string name="summary">Resumo</string>
+    <string name="refresh">Calcular novamente</string>
+    <string name="individual_value">Valor por pessoa: R$</string>
+    <string name="total_with_tips">Valor total com gorjeta (R$):</string>
+    <string name="individual_amount_without_tip">Valor individual sem gorjeta (R$):</string>
+    <string name="tip_amount">Valor da gorjeta (R$):</string>
+    <string name="tip_percentage">Porcentagem de gorjeta:</string>
+    <string name="number_of_people">Número de pessoas:</string>
+    <string name="fill_fields">Preencha os campos abaixo para realizar o cálculo da sua conta</string>
+    <string name="enter_bill_amount">Digite o valor da conta:</string>
+    <string name="ex_amount">Ex: R$ 250,00</string>
+    <string name="num_of_people">Número de pessoas:</string>
+    <string name="ex_num_people">Ex: 7</string>
+    <string name="add_tip">Adicionar gorjeta</string>
+    <string name="no_tip">Sem gorjeta</string>
+    <string name="add_percentage_tip">Porcentagem da gorjeta:</string>
+    <string name="error_empty_bill">Digite o valor total da conta!</string>
+    <string name="error_empty_people">Digite o número de pessoas!</string>
+    <string name="snackbar_add_tip">Deseja adicionar gorjeta?</string>
+    <string name="snackbar_choose_percentage">Escolha a porcentagem de gorjeta!</string>
+    <string name="clean">Limpar</string>
+    <string name="calculate">Calcular</string>
+</resources>
