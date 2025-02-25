@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-
     <TextView
         android:id="@+id/tv_hint_num_of_people"
         android:layout_width="wrap_content"
@@ -238,6 +237,5 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
